@@ -27,7 +27,7 @@ app.get('/coins', (req, res) => {
 })
 
 app.get(`/coins/:id`, (req, res) => {
-  const id = req.params.id;s
+  const id = req.params.id;
   axios.get(`https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=${id}`,{headers: {'X-CMC_PRO_API_KEY':'583eefc0-111d-4fcf-98fe-04b32beecbed'}})
   .then(response => {
     res.send(response.data)
