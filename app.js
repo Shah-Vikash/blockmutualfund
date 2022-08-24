@@ -4,14 +4,18 @@ const axios = require('axios');
 const express = require('express')
 const app = express();
 const cors = require('cors');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 app.use(cors({
   origin: '*'
 }));
-const port = 8080;
+const port = process.env.PORT || 8080;
 const host = '0.0.0.0';
 
 app.get('/', (req, res) => {
+  console.log(`Your port is ${process.env.PORT}`);
   res.send('Hello World from IBM Cloud Essentials!');
 })
 
